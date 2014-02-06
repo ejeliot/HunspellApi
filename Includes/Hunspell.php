@@ -3,9 +3,7 @@
  * Class Hunspell
  */
 class Hunspell {
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $cmd = 'echo %s | /usr/bin/hunspell';
 
     /**
