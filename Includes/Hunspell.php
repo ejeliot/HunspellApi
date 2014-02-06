@@ -10,8 +10,7 @@ class Hunspell {
     protected function process($output) {
         $results = [];
         foreach (array_slice($output, 1) as $line) {
-            $line = trim($line);
-            if (preg_match('/^\&\s+([^\s]+)[0-9\s]+\:(.+)/', $line, $matches)) {
+            if (preg_match('/^\&\s+([^\s]+)[0-9\s]+\:(.+)/', trim($line), $matches)) {
                 $suggestions = explode(',', $matches[2]);
                 $suggestions = array_map('trim', $suggestions);
                 $results[trim($matches[1])] = $suggestions;
